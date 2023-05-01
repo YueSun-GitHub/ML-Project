@@ -38,5 +38,6 @@ def hello():
         
     return render_template("index.html", my_marks = models)
 
-app.run()
+if __name__ == "__main__":
+    app.run()
 
