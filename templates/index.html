@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+	<title>Hotel Cancellation Rate Prediction</title>
+	<style type = "text/css">
+	.container{
+		font-size: 30px;
+    	line-height: 1.5;
+	  }
+	</style>
+</head>
+<body>
+	<h1>Hotel Cancellation Rate Prediction</h1>
+
+	<p>Enter the following details:</p>
+	<form action="/" method="post">
+		<label for="no_of_adults">Number of Adults:</label>
+		<input type="number" id="no_of_adults" name="no_of_adults" placeholder="Enter number of adults" min="0"><br>
+
+		<label for="no_of_children">Number of Children:</label>
+		<input type="number" id="no_of_children" name="no_of_children" placeholder="Enter number of children" min="0"><br>
+
+		<label for="no_of_weekend_nights">Number of Weekend Nights:</label>
+		<input type="number" id="no_of_weekend_nights" name="no_of_weekend_nights" placeholder="Enter number of weekend nights" min="0"><br>
+
+		<label for="no_of_week_nights">Number of Week Nights:</label>
+		<input type="number" id="no_of_week_nights" name="no_of_week_nights" placeholder="Enter number of week nights" min="0"><br>
+
+		<label for="type_of_meal_plan">Type of Meal Plan:</label>
+		<select id="type_of_meal_plan" name="type_of_meal_plan">
+			<option value="0">None</option>
+			<option value="1">BB</option>
+			<option value="2">HB</option>
+			<option value="3">FB</option>
+		</select><br>
+
+		<label for="required_car_parking_space">Required Car Parking Space:</label>
+		<select id="required_car_parking_space" name="required_car_parking_space">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</select><br>
+
+		<label for="room_type_reserved">Room Type Reserved:</label>
+		<select id="room_type_reserved" name="room_type_reserved">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+		</select><br>
+
+		<label for="lead_time">Lead Time:</label>
+		<input type="number" id="lead_time" name="lead_time" placeholder="Enter lead time" min="0"><br>
+		
+		<label for="arrival_date_obj">Arrival Date:</label>
+		<input type="date" id="arrival_date_obj" name="arrival_date_obj" min="2017-01-01" max="2018-12-31"><br>
+		  
+		<label for="market_segment_type">Market Segment Type:</label>
+		<select id="market_segment_type" name="market_segment_type">
+			<option value="0">Online</option>
+			<option value="1">Offline</option>
+			<option value="2">Corporate</option>
+			<option value="3">Aviation</option>
+			<option value="4">Complementary</option>
+		</select><br>
+
+		<label for="repeated_guest">Repeated Guest:</label>
+		<select id="repeated_guest" name="repeated_guest">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</select><br>
+
+		<label for="no_of_previous_cancellations">Number of Previous Cancellations:</label>
+		<input type="number" id="no_of_previous_cancellations" name="no_of_previous_cancellations" placeholder="Enter number of previous cancellations" min="0"><br>
+
+		<label for="no_of_previous_bookings_not_canceled">Number of Previous Bookings Not Canceled:</label>
+		<input type="number" id="no_of_previous_bookings_not_canceled" name="no_of_previous_bookings_not_canceled" placeholder="Enter number of previous bookings not canceled" min="0"><br>
+
+		<label for="avg_price_per_room">Average Price per Room:</label>
+		<input type="number" id="avg_price_per_room" name="avg_price_per_room"  step="any" placeholder="Enter average price per room" min="0"><br>
+
+		<label for="no_of_special_requests">Number of Special Requests:</label>
+		<input type="number" id="no_of_special_requests" name="no_of_special_requests" placeholder="Enter number of special requests" min="0"><br>
+
+		<input type="submit" value="Submit">
+	</form>
+	
+	<div class ="container">
+	{% if my_marks %}
+	<p>The cancellation rate of this order is: {{ my_marks }}</p>
+	{% else %}
+	<p>No result yet.</p>
+	{% endif %}
+	</div>
+</body>
+</html>
